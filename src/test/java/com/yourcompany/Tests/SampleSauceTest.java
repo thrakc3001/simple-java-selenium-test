@@ -1,0 +1,69 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Action;
+import org.junit.*;
+import java.io.IOException;
+import java.io.File;
+import org.junit.Test;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertThat;
+import org.junit.rules.TestName;
+import com.saucelabs.saucerest.SauceREST;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.JavascriptExecutor;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import java.util.concurrent.TimeUnit;
+import java.net.URL;
+import org.openqa.selenium.html5.Location;
+
+
+ 
+public class SampleSauceTest {
+ 
+  // public static final String USERNAME = System.getenv("SAUCE_USERNAME");
+  // public static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
+  public WebDriver driver;
+
+  @Before
+  public void setUp() throws Exception {
+ 
+    String USERNAME = System.getenv("SAUCE_USERNAME");
+    String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
+    String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
+
+    
+	DesiredCapabilities caps = DesiredCapabilities.firefox();
+	caps.setCapability("platform", "macOS 10.15");
+	caps.setCapability("version", "latest");
+	caps.setCapability("name", "JWP Java latest");
+
+    driver = new RemoteWebDriver(new URL(URL), caps);
+  }
+
+  @Test
+  public void testMethod() throws IOException, InterruptedException {
+  
+    driver.get("https://www.google.com");
+
+    // Actions action = new Actions(driver);
+    // action.clickAndHold(driver.findElement(By.name("q"))).build().perform();
+  }
+
+  @After
+  public void tearDown() {
+    // String sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
+    // SauceREST sauce = new SauceREST(System.getenv("SAUCE_USERNAME"), System.getenv("SAUCE_ACCESS_KEY"));
+    // sauce.jobPassed(sessionId);
+
+    driver.quit();
+  }
+}
+
