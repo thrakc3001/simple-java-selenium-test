@@ -28,23 +28,20 @@ import org.openqa.selenium.html5.Location;
  
 public class SampleSauceTest {
  
-  // public static final String USERNAME = System.getenv("SAUCE_USERNAME");
-  // public static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
   public WebDriver driver;
 
   @Before
   public void setUp() throws Exception {
  
-//     String USERNAME = System.getenv("SAUCE_USERNAME");
-//     String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
-//     String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
-
+    String USERNAME = System.getenv("SAUCE_USERNAME");
+    String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
+    String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
     
-	DesiredCapabilities caps = DesiredCapabilities();
-// 	caps.setCapability("platform", "Windows 10");
+	DesiredCapabilities caps = DesiredCapabilities.chrome();
+	caps.setCapability("platform", "Windows 10");
 // 	caps.setCapability("browserName", "Chrome");
 //  	caps.setCapability("version", "79.0");
-// 	caps.setCapability("name", "Jenkins Test");
+	caps.setCapability("name", "Jenkins Test");
 
     driver = new RemoteWebDriver(new URL(URL), caps);
   }
