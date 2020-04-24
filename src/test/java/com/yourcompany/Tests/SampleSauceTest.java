@@ -41,9 +41,9 @@ public class SampleSauceTest {
 
     
 	DesiredCapabilities caps = DesiredCapabilities.firefox();
-// 	caps.setCapability("platform", "macOS 10.15");
-// 	caps.setCapability("version", "latest");
-	caps.setCapability("name", "JWP Java latest");
+	caps.setCapability("platform", System.getenv("SELENIUM_PLATFORM");
+// 	caps.setCapability("browserName", System.getenv("SELENIUM_BROWSER");
+	caps.setCapability("name", "Jenkins Test");
 
     driver = new RemoteWebDriver(new URL(URL), caps);
   }
