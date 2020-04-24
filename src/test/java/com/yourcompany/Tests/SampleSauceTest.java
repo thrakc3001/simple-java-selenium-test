@@ -35,12 +35,12 @@ public class SampleSauceTest {
   @Before
   public void setUp() throws Exception {
  
-    String USERNAME = System.getenv("SAUCE_USERNAME");
-    String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
-    String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
+//     String USERNAME = System.getenv("SAUCE_USERNAME");
+//     String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
+//     String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 
     
-// 	DesiredCapabilities caps = DesiredCapabilities.firefox();
+	DesiredCapabilities caps = DesiredCapabilities();
 // 	caps.setCapability("platform", "Windows 10");
 // 	caps.setCapability("browserName", "Chrome");
 //  	caps.setCapability("version", "79.0");
