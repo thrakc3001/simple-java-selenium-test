@@ -40,10 +40,10 @@ public class SampleSauceTest {
     String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 
     
-	DesiredCapabilities caps = DesiredCapabilities.firefox();
-	caps.setCapability("platform", System.getenv("SELENIUM_PLATFORM");
+// 	DesiredCapabilities caps = DesiredCapabilities.firefox();
+// 	caps.setCapability("platform", System.getenv("SELENIUM_PLATFORM");
 // 	caps.setCapability("browserName", System.getenv("SELENIUM_BROWSER");
-	caps.setCapability("name", "Jenkins Test");
+// 	caps.setCapability("name", "Jenkins Test");
 
     driver = new RemoteWebDriver(new URL(URL), caps);
   }
