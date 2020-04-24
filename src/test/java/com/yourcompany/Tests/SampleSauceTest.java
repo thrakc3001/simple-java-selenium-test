@@ -41,8 +41,8 @@ public class SampleSauceTest {
 
     
 	DesiredCapabilities caps = DesiredCapabilities.firefox();
-	caps.setCapability("platform", "macOS 10.15");
-	caps.setCapability("version", "latest");
+// 	caps.setCapability("platform", "macOS 10.15");
+// 	caps.setCapability("version", "latest");
 	caps.setCapability("name", "JWP Java latest");
 
     driver = new RemoteWebDriver(new URL(URL), caps);
