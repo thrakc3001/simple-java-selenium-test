@@ -51,6 +51,7 @@ public class SampleSauceTest {
   public void testMethod() throws IOException, InterruptedException {
   
     driver.get("https://www.google.com");
+	  System.out.println(System.getenv("SELENIUM_BROWSER"));
 
     // Actions action = new Actions(driver);
     // action.clickAndHold(driver.findElement(By.name("q"))).build().perform();
@@ -61,7 +62,7 @@ public class SampleSauceTest {
     // String sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
     // SauceREST sauce = new SauceREST(System.getenv("SAUCE_USERNAME"), System.getenv("SAUCE_ACCESS_KEY"));
     // sauce.jobPassed(sessionId);
-	  System.out.println(System.getenv("SELENIUM_BROWSER"));
+	  
 
     driver.quit();
   }
