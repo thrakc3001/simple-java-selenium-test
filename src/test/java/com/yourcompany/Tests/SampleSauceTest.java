@@ -51,7 +51,7 @@ public class SampleSauceTest {
   public void testMethod() throws IOException, InterruptedException {
   
     driver.get("https://www.google.com");
-	  System.out.println(System.getenv("SELENIUM_BROWSER"));
+	  sh 'printenv'
 
     // Actions action = new Actions(driver);
     // action.clickAndHold(driver.findElement(By.name("q"))).build().perform();
