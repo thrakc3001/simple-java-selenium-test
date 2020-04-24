@@ -51,7 +51,6 @@ public class SampleSauceTest {
   public void testMethod() throws IOException, InterruptedException {
   
     driver.get("https://www.google.com");
-	  sh 'printenv'
 
     // Actions action = new Actions(driver);
     // action.clickAndHold(driver.findElement(By.name("q"))).build().perform();
