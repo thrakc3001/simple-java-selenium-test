@@ -41,10 +41,10 @@ public class SampleSauceTest {
 
     
 	DesiredCapabilities caps = DesiredCapabilities.firefox();
-	caps.setCapability("platform", "Windows 10");
-	caps.setCapability("browserName", "Chrome");
- caps.setCapability("version", "79.0");
-	caps.setCapability("name", "Jenkins Test");
+// 	caps.setCapability("platform", "Windows 10");
+// 	caps.setCapability("browserName", "Chrome");
+//  	caps.setCapability("version", "79.0");
+// 	caps.setCapability("name", "Jenkins Test");
 
     driver = new RemoteWebDriver(new URL(URL), caps);
   }
