@@ -38,12 +38,12 @@ public class SampleSauceTest {
     String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
     
 	DesiredCapabilities capabilities = new DesiredCapabilities();
-	desiredCapabilities.setBrowserName(System.getenv("SELENIUM_BROWSER"));
-	desiredCapabilities.setVersion(System.getenv("SELENIUM_VERSION"));
-	desiredCapabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
-	caps.setCapability("name", "Jenkins Test");
+	capabilities.setBrowserName(System.getenv("SELENIUM_BROWSER"));
+	capabilities.setVersion(System.getenv("SELENIUM_VERSION"));
+	capabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
+	capabilities.setCapability("name", "Jenkins Test");
 
-    driver = new RemoteWebDriver(new URL(URL), caps);
+    driver = new RemoteWebDriver(new URL(URL), capabilities);
   }
 
   @Test
