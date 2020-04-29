@@ -42,6 +42,7 @@ public class SampleSauceTest {
 	capabilities.setBrowserName(System.getenv("SELENIUM_BROWSER"));
 	capabilities.setVersion(System.getenv("SELENIUM_VERSION"));
 	capabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
+	capabilities.setCapability("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
 	capabilities.setCapability("name", "Jenkins Test");
 
     driver = new RemoteWebDriver(new URL(URL), capabilities);
