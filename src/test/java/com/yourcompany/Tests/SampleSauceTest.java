@@ -68,7 +68,7 @@ public class SampleSauceTest {
     // SauceREST sauce = new SauceREST(System.getenv("SAUCE_USERNAME"), System.getenv("SAUCE_ACCESS_KEY"));
     // sauce.jobPassed(sessionId);
     String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s",
-    (((RemoteWebDriver) driver).getSessionId()).toString(), System.getenv("JOB_NAME"));
+    (((RemoteWebDriver) driver).getSessionId()).toString(), "Jenkins Test");
     System.out.println(message);
 	  
 
