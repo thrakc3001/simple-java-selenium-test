@@ -46,8 +46,8 @@ public class SampleSauceTest {
 // 	capabilities.setCapability("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
 // 	capabilities.setCapability("tunnelIdentifier", "jenkinstunnel");
 	capabilities.setCapability("name", "Jenkins Test");
-	capabilities.setCapability("deviceName", System.getenv("SELENIUM_DEVICE"));
-    	capabilities.setCapability("platformName", System.getenv("SELENIUM_DEVICE_TYPE"));
+// 	capabilities.setCapability("deviceName", System.getenv("SELENIUM_DEVICE"));
+//     	capabilities.setCapability("platformName", System.getenv("SELENIUM_DEVICE_TYPE"));
 // 	capabilities.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
 	capabilities.setCapability("build", "SAUCE_BUILD_NAME");
 
@@ -66,9 +66,9 @@ public class SampleSauceTest {
 
   @After
   public void tearDown() {
-    // String sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
-    // SauceREST sauce = new SauceREST(System.getenv("SAUCE_USERNAME"), System.getenv("SAUCE_ACCESS_KEY"));
-    // sauce.jobPassed(sessionId);
+    String sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
+    SauceREST sauce = new SauceREST(System.getenv("SAUCE_USERNAME"), System.getenv("SAUCE_ACCESS_KEY"));
+    sauce.jobPassed(sessionId);
 	  
     String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s",
     (((RemoteWebDriver) driver).getSessionId()).toString(), "Jenkins Test");
