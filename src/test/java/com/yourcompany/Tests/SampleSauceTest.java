@@ -66,6 +66,9 @@ public class SampleSauceTest {
     // String sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
     // SauceREST sauce = new SauceREST(System.getenv("SAUCE_USERNAME"), System.getenv("SAUCE_ACCESS_KEY"));
     // sauce.jobPassed(sessionId);
+    String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s",
+    (((RemoteWebDriver) driver).getSessionId()).toString(), "some job name");
+    System.out.println(message);
 	  
 
     driver.quit();
