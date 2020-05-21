@@ -47,6 +47,7 @@ public class SampleSauceTest {
 	capabilities.setCapability("name", "Jenkins Test");
 	capabilities.setCapability("deviceName", System.getenv("SELENIUM_DEVICE"));
     	capabilities.setCapability("platformName", System.getenv("SELENIUM_DEVICE_TYPE"));
+	capabilities.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
 
 
     driver = new RemoteWebDriver(new URL(URL), capabilities);
