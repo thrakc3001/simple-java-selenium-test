@@ -43,7 +43,7 @@ public class SampleSauceTest {
 // 	capabilities.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS")); 
 	capabilities.setVersion(System.getenv("SELENIUM_VERSION"));
 	capabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
-// 	capabilities.setCapability("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
+	capabilities.setCapability("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
 // 	capabilities.setCapability("tunnelIdentifier", "tunnelName");
 	capabilities.setCapability("name", "Jenkins Test");
 // 	capabilities.setCapability("deviceName", System.getenv("SELENIUM_DEVICE"));
