@@ -24,6 +24,7 @@ import io.appium.java_client.ios.IOSDriver;
 import java.util.concurrent.TimeUnit;
 import java.net.URL;
 import org.openqa.selenium.html5.Location;
+import org.openqa.selenium.MutableCapabilities;
 
 
  
