@@ -54,14 +54,12 @@ public class SampleSauceTest {
 
 	  
         MutableCapabilities sauceOptions = new MutableCapabilities();
-
+        sauceOptions.put("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
         MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
         capabilities.setCapability("browserVersion", System.getenv("SELENIUM_VERSION"));
         capabilities.setCapability("platformName", System.getenv("SELENIUM_PLATFORM"));
         capabilities.setCapability("sauce:options", sauceOptions);
-        sauceOptions.put("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
-
 
     driver = new RemoteWebDriver(new URL(URL), capabilities);
   }
