@@ -54,7 +54,7 @@ public class SampleSauceTest {
 
 	  
         MutableCapabilities sauceOptions = new MutableCapabilities();
-        sauceOptions.setCapability("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
+        sauceOptions.setCapability("tunnelIdentifier", System.getenv("TUNNEL_NAME"));
 	sauceOptions.setCapability("name", "Jenkins Test");
         MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
