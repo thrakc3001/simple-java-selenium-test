@@ -53,12 +53,8 @@ public class SampleSauceTest {
   }
 
   @Test
-  public void testMethod() throws IOException, InterruptedException {
-  
+  public void testMethod() throws IOException, InterruptedException { 
     driver.get("https://www.google.com");
-
-    // Actions action = new Actions(driver);
-    // action.clickAndHold(driver.findElement(By.name("q"))).build().perform();
   }
 
   @After
