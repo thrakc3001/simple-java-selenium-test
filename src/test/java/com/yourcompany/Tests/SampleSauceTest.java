@@ -37,7 +37,7 @@ public class SampleSauceTest {
  
     String USERNAME = System.getenv("SAUCE_USERNAME");
     String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
-    String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com/wd/hub";
+    String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com/wd/hub";
     
 // 	DesiredCapabilities capabilities = new DesiredCapabilities();
 // 	capabilities.setBrowserName(System.getenv("SELENIUM_BROWSER"));
