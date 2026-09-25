@@ -38,29 +38,16 @@ public class SampleSauceTest {
     String USERNAME = System.getenv("SAUCE_USERNAME");
     String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
     String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.us-west-1.saucelabs.com/wd/hub";
-    
-// 	DesiredCapabilities capabilities = new DesiredCapabilities();
-// 	capabilities.setBrowserName(System.getenv("SELENIUM_BROWSER"));
-// // 	capabilities.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS")); 
-// 	capabilities.setVersion(System.getenv("SELENIUM_VERSION"));
-// 	capabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
-// 	capabilities.setCapability("tunnelIdentifier", System.getenv("TUNNEL_IDENTIFIER"));
-// // 	capabilities.setCapability("tunnelIdentifier", "tunnelName");
-// 	capabilities.setCapability("name", "Jenkins Test");
-// // 	capabilities.setCapability("deviceName", System.getenv("SELENIUM_DEVICE"));
-// //     	capabilities.setCapability("platformName", System.getenv("SELENIUM_DEVICE_TYPE"));
-// // 	capabilities.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
-// 	capabilities.setCapability("build", System.getenv("SAUCE_BUILD_NAME"));
-
 	  
-        MutableCapabilities sauceOptions = new MutableCapabilities();
-        sauceOptions.setCapability("tunnelName", System.getenv("TUNNEL_NAME"));
-		sauceOptions.setCapability("name", "Jenkins Test");
-        MutableCapabilities capabilities = new MutableCapabilities();
-        capabilities.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
-        capabilities.setCapability("browserVersion", System.getenv("SELENIUM_VERSION"));
-        capabilities.setCapability("platformName", System.getenv("SELENIUM_PLATFORM"));
-        capabilities.setCapability("sauce:options", sauceOptions);
+	MutableCapabilities sauceOptions = new MutableCapabilities();
+	  
+	sauceOptions.setCapability("tunnelName", System.getenv("TUNNEL_NAME"));
+	sauceOptions.setCapability("name", "Jenkins Test");
+	MutableCapabilities capabilities = new MutableCapabilities();
+	capabilities.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
+	capabilities.setCapability("browserVersion", System.getenv("SELENIUM_VERSION"));
+	capabilities.setCapability("platformName", System.getenv("SELENIUM_PLATFORM"));
+	capabilities.setCapability("sauce:options", sauceOptions);
 
     driver = new RemoteWebDriver(new URL(URL), capabilities);
   }
